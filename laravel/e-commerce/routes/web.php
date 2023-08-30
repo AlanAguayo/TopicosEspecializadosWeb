@@ -23,4 +23,7 @@ Route::get('/greeting', function () {
 });
 
 Route::get('/services', [SiteController::class, 'services']);
+Route::get('/contact', [SiteController::class, 'contact']);
+Route::get('/faq', [SiteController::class, 'faq']);
+Route::get('/products', [SiteController::class, 'products']);
 
