@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('e-commerce.index');
+});
+
+Route::get('/product-list', function () {
+    return view('e-commerce.product-list');
+});
+
+/*
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -26,4 +35,5 @@ Route::get('/services', [SiteController::class, 'services']);
 Route::get('/contact', [SiteController::class, 'contact']);
 Route::get('/faq', [SiteController::class, 'faq']);
 Route::get('/products', [SiteController::class, 'products']);
-
+Route::get('/about', [SiteController::class, 'about']);
+*/

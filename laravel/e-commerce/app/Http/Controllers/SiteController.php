@@ -23,4 +23,9 @@ class SiteController extends Controller
     public function products(){
         return view('products');
     }
+
+    public function about(){
+        $about_message = "Hola, somos una empresa deddicada al desarrollo de sistemas en la web.";
+        return view('about',["about_message" => $about_message]);
+    }
 }
