@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('e-commerce.index');
 });
 
-Route::get('/product-list', function () {
-    return view('e-commerce.product-list');
-});
+Route::get('/product-list', [SiteController::class,'products'])->name('products');
 
 /*
 Route::get('/', function () {

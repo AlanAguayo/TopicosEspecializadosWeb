@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -21,7 +22,9 @@ class SiteController extends Controller
     }
 
     public function products(){
-        return view('products');
+        $products = Product::all();
+        //return view('products', ['products'=>$products]);
+        return view('e-commerce.product-list', compact('products'));
     }
 
     public function about(){
