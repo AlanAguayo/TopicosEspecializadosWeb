@@ -66,11 +66,11 @@
                                 </div>
                             </div>
                         </div>
-                        @foreach ($products as $p)
+                        @foreach ($products as $item)
                             <div class="col-md-4">
                                 <div class="product-item">
                                     <div class="product-title">
-                                        <a href="#">{{$p->name}}</a>
+                                        <a href="#">{{$item->name}}</a>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="product-image">
                                         <a href="product-detail.html">
-                                            <img src="{{URL::asset('img/'.$p->image)}}" alt="Product Image">
+                                            <img src="{{URL::asset('img/'.$item->image)}}" alt="Product Image">
                                         </a>
                                         <div class="product-action">
                                             <a href="#"><i class="fa fa-cart-plus"></i></a>
@@ -90,7 +90,7 @@
                                         </div>
                                     </div>
                                     <div class="product-price">
-                                        <h3><span>$</span>{{$p->price}}</h3>
+                                        <h3><span>$</span>{{$item->sale_price}}</h3>
                                         <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
                                     </div>
                                 </div>
@@ -124,26 +124,12 @@
                         <h2 class="title">Category</h2>
                         <nav class="navbar bg-light">
                             <ul class="navbar-nav">
+                                @foreach ($categories as $item)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
+                                    <a class="nav-link" href="/product-list/{{$item->id}}"><i class="{{$item->icon}}"></i>{{$item->name}}</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies
-                                        Clothes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women
-                                        Clothes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets &
-                                        Accessories</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics &
-                                        Accessories</a>
-                                </li>
-                            </ul>
+                                @endforeach
+                                </ul>
                         </nav>
                     </div>
 
