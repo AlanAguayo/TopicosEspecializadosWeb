@@ -32,6 +32,11 @@ class SiteController extends Controller
         return view('e-commerce.product-list', compact('products','categories'));
     }
 
+    public function productsByCat(){
+        $categories = Categories::all();
+        return view('e-commerce.products-by-cat', compact('categories'));
+    }
+
     public function about(){
         $about_message = "Hola, somos una empresa deddicada al desarrollo de sistemas en la web.";
         return view('about',["about_message" => $about_message]);

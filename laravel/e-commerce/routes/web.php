@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/product-list/{categories_id?}', [SiteController::class,'products'])->name('products');
 
+Route::get('/productsByCat', [SiteController::class,'productsByCat']);
+
 /*
 Route::get('/', function () {
     return view('welcome');
