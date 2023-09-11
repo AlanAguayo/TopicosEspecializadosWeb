@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.e-commerce')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FAQ</title>
-</head>
+@section('title', 'Contact Us')
+
+@section('content')
 
 <body>
     <table class="navbar">
@@ -20,4 +16,4 @@
     <p>{{$about_message}}</p>
 </body>
 
-</html>
+@endSection

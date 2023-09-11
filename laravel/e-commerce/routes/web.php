@@ -20,7 +20,11 @@ Route::get('/', function () {
 
 Route::get('/product-list/{categories_id?}', [SiteController::class,'products'])->name('products');
 
-Route::get('/productsByCat', [SiteController::class,'productsByCat']);
+Route::get('/productsByCat', [SiteController::class,'productsByCat'])->name('productsByCat');
+
+Route::get('/contact', [SiteController::class,'contact'])->name('contact');
+
+Route::post('/contact', [SiteController::class,'contact'])->name('contact_post');
 
 /*
 Route::get('/', function () {
@@ -32,7 +36,7 @@ Route::get('/greeting', function () {
 });
 
 Route::get('/services', [SiteController::class, 'services']);
-Route::get('/contact', [SiteController::class, 'contact']);
+
 Route::get('/faq', [SiteController::class, 'faq']);
 Route::get('/products', [SiteController::class, 'products']);
 Route::get('/about', [SiteController::class, 'about']);

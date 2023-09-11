@@ -1,37 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.e-commerce')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact</title>
-</head>
+@section('title', 'Contact Us')
 
-<body>
-    <table class="navbar">
-        <tr>
-            <td><a href="/services">Services</td>
-            <td><a href="/contact">Contact Us</a></td>
-            <td><a href="/faq">FAQ</a></td>
-            <td><a href="/products">Products</a></td>
-        </tr>
-    </table>
-    <h1>Contact Us</h1>
-    <div class="contact-form">
-        <form action="#" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+@section('content')
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+    <body>
+        <h1>Contact Us</h1>
+        <div class="contact-form">
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <form action="{{ route('contact_post') }}" method="post" class="mx-auto w-75">
+                @csrf
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{old("name")}}" required>
+                </div>
 
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</body>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{old("email")}}" required>
+                </div>
 
-</html>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="subject" class="form-control" id="subject" name="subject" value="{{old("subject")}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required>{{old("name")}}</textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            @if (session()->get('success'))
+                <div class="alert alert-success text-center">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+
+    </body>
+
+@endSection
