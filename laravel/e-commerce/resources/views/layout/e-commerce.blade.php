@@ -217,6 +217,6 @@
         <script src="{{asset("lib/slick/slick.min.js")}}"></script>
         
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="{{asset("js/main.js")}}"></script>
     </body>
 </html>

@@ -26,6 +26,12 @@ Route::get('/contact', [SiteController::class,'contact'])->name('contact');
 
 Route::post('/contact', [SiteController::class,'contact'])->name('contact_post');
 
+Route::get('/productDetail/{products_id}', [SiteController::class,'productDetail'])->name('productDetail');
+
+Route::post('/productDetail/{products_id}', [SiteController::class,'productDetail'])->name('review_post');
+
+Route::post('/mail', [SiteController::class,'mail'])->name('mail');
+
 /*
 Route::get('/', function () {
     return view('welcome');
