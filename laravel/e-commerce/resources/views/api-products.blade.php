@@ -1,29 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.e-commerce')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="{{asset("js/apiProducts.js")}}"></script>
-    <style>
-        .center {
-            text-align: center;
-        }
-        table, th, td {
-  border: 1px solid black;
-}
-    </style>
-</head>
+@section('title', 'Contact Us')
 
-<body>
-    <h1 class="center">API Products</h1>
-    <div class="center">
-        <button id="btnSend">Send Rquest</button>
+@section('content')
+    <div class="container">
+        <button id="btnSend" class="btn btn-primary">Send Request</button>
+        <select id="selectCategories"></select>
     </div>
-    <table>
+
+    <table id="tblProducts">
         <thead>
             <tr>
                 <th>ID</th>
@@ -35,15 +20,11 @@
                 <th>Size</th>
                 <th>Color</th>
                 <th>Image</th>
-                <th>Category Id</th>
-                <th>Created At</th>
-                <th>updated At</th>
             </tr>
         </thead>
-        <tbody id="tbody">
+        <tbody>
 
         </tbody>
     </table>
-</body>
-
-</html>
+    
+@endSection

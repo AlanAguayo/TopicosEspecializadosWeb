@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiEcommerceController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,8 +33,9 @@ Route::post('/productDetail/{products_id}', [SiteController::class,'productDetai
 
 Route::post('/mail', [SiteController::class,'mail'])->name('mail');
 
-Route::get('/api-products', [SiteController::class,'apiProducts'])->name('api-products');
+Route::get('/api-products/{category_id}', [SiteController::class,'apiProducts'])->name('api-products');
 
+Route::get('/categories', [ApiEcommerceController::class,'categories'])->name('api-categories');
 /*
 Route::get('/', function () {
     return view('welcome');

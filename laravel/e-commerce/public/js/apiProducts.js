@@ -1,15 +1,33 @@
 
+let table = new DataTable('#tblProducts');
+
 $(document).ready(function () {
+
+    $('#selectCategories').select2({
+        width: '50%',
+        ajax: {
+          url: 'http://127.0.0.1:8000/api/categories',
+          dataType: 'json'
+        }
+      });
+
     $('#btnSend').on('click', function () {
+        let selected = $('#selectCategories').select2('data');
+        
+        let api = "http://127.0.0.1:8000/api/products";
+        if (selected.length > 0){
+            api = "http://127.0.0.1:8000/api/products?category="+selected[0].id;
+        }
+
         $.ajax({
             dataType: 'json',
-            url: "http://127.0.0.1:8000/api/products",
+            url: api,
             type: 'GET',
             success: function (response) {
-                $("#message").empty();
+                table.clear().destroy();
                 products = response;
                 $.each(products, function (i) {
-                    $('#tbody').append(`
+                    $('#tblProducts tbody').append(`
             <tr>
                 <td>
                     ${products[i].id}
@@ -38,17 +56,9 @@ $(document).ready(function () {
                 <td>
                     ${products[i].image}
                 </td>
-                <td>
-                    ${products[i].categories_id}
-                </td>
-                <td>
-                    ${products[i].created_at}
-                </td>
-                <td>
-                    ${products[i].updated_at}
-                </td>
        </tr>`);
                 });
+                table = new DataTable('#tblProducts');
             },
             error: function () {
                 console.log('error');

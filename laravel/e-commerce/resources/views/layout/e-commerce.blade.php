@@ -6,7 +6,9 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="eCommerce HTML Template Free Download" name="keywords">
         <meta content="eCommerce HTML Template Free Download" name="description">
-
+        <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        
         <!-- Favicon -->
         <link href="{{asset("img/favicon.ico")}}" rel="icon">
 
@@ -175,15 +177,15 @@
                     <div class="col-md-6">
                         <div class="payment-method">
                             <h2>We Accept:</h2>
-                            <img src="img/payment-method.png" alt="Payment Method" />
+                            <img src={{asset("img/payment-method.png")}} alt="Payment Method" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="payment-security">
                             <h2>Secured By:</h2>
-                            <img src="img/godaddy.svg" alt="Payment Security" />
-                            <img src="img/norton.svg" alt="Payment Security" />
-                            <img src="img/ssl.svg" alt="Payment Security" />
+                            <img src={{asset("img/godaddy.svg")}} alt="Payment Security" />
+                            <img src={{asset("img/norton.svg")}} alt="Payment Security" />
+                            <img src={{asset("img/ssl.svg")}} alt="Payment Security" />
                         </div>
                     </div>
                 </div>
@@ -211,11 +213,15 @@
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
         
         <!-- JavaScript Libraries -->
+
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script src="{{asset("lib/easing/easing.min.js")}}"></script>
         <script src="{{asset("lib/slick/slick.min.js")}}"></script>
-        
+        <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="{{asset("js/apiProducts.js")}}"></script></head>
+
         <!-- Template Javascript -->
         <script src="{{asset("js/main.js")}}"></script>
     </body>
