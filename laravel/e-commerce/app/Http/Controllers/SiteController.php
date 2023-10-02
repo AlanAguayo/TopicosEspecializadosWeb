@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Models\Products;
 use App\Models\Reviews;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 class SiteController extends Controller
@@ -34,6 +35,12 @@ class SiteController extends Controller
 
     public function apiProducts(){
         return view('api-products');
+    }
+
+    public function adminEmployees(){
+        $response = Http::get("http://127.0.0.1:3000/api/v1/employees");
+        $employees = $response->object();
+        return view('e-commerce.admin-employees',compact('employees'));
     }
 
     public function about(){
