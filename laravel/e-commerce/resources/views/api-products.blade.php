@@ -6,7 +6,7 @@
     <div class="container">
         <button id="btnSend" class="btn btn-primary">Send Request</button>
         <select id="selectCategories"></select>
-    </div>
+    </div> 
 
     <table id="tblProducts">
         <thead>
@@ -25,6 +25,12 @@
         <tbody>
 
         </tbody>
+        <tfoot>
+        </tfoot>
     </table>
     
+@endSection
+
+@section('scripts')
+<script src="{{asset("js/apiProducts.js")}}"></script>
 @endSection

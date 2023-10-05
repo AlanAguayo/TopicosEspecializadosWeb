@@ -74,7 +74,7 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
                                 <div class="dropdown-menu">
                                     <a href="#" class="dropdown-item">Login</a>
-                                    <a href="#" class="dropdown-item">Register</a>
+                                    <a href="/register" class="dropdown-item">Register</a>
                                 </div>
                             </div>
                         </div>
@@ -220,8 +220,7 @@
         <script src="{{asset("lib/slick/slick.min.js")}}"></script>
         <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-        <script src="{{asset("js/apiProducts.js")}}"></script></head>
-
+        @yield('scripts');
         <!-- Template Javascript -->
         <script src="{{asset("js/main.js")}}"></script>
     </body>

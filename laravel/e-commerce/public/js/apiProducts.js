@@ -9,7 +9,7 @@ $(document).ready(function () {
           url: 'http://127.0.0.1:8000/api/categories',
           dataType: 'json'
         }
-      });
+      }); 
 
     $('#btnSend').on('click', function () {
         let selected = $('#selectCategories').select2('data');

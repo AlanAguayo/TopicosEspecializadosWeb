@@ -37,6 +37,10 @@ class SiteController extends Controller
         return view('api-products');
     }
 
+    public function adminOrders(){
+        return view('e-commerce.orders');
+    }
+
     public function adminEmployees(){
         $response = Http::get("http://127.0.0.1:3000/api/v1/employees");
         $employees = $response->object();
@@ -110,5 +114,9 @@ class SiteController extends Controller
             return redirect()->route("contact")->with('success', 'Your contact messsage has been sent.');
         }
         return view('contact');
+    }
+
+    public function register(){
+        return view('register');
     }
 }

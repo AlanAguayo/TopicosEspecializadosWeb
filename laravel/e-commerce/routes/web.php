@@ -33,11 +33,15 @@ Route::post('/productDetail/{products_id}', [SiteController::class,'productDetai
 
 Route::post('/mail', [SiteController::class,'mail'])->name('mail');
 
-Route::get('/admin/products/{category_id}', [SiteController::class,'apiProducts'])->name('api-products');
+Route::get('/admin/products', [SiteController::class,'apiProducts'])->name('api-products');
 
 Route::get('/admin/employees', [SiteController::class,'adminEmployees'])->name('admin-employees');
 
 Route::get('/categories', [ApiEcommerceController::class,'categories'])->name('api-categories');
+
+Route::get('/register', [SiteController::class,'register'])->name('register');
+
+Route::get('/admin/orders', [SiteController::class,'adminOrders'])->name('admin-orders');
 /*
 Route::get('/', function () {
     return view('welcome');

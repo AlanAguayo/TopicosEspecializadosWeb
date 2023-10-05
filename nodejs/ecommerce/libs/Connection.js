@@ -10,7 +10,6 @@ class Connection {
     try {
         await client.connect();
         this.db = client.db(process.env.DB_NAME)
-        console.log("MongoDB database connection success...")
         return this.db;
     } catch (e) {
         console.error(e);
