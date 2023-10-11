@@ -13,4 +13,6 @@ router.put('/products', productController.update);
 
 router.delete('/products/:id', productController.drop);
 
+router.get('/productsBySupplier/:supplier_id', productController.productsBySupplier);
+
 module.exports = router;
