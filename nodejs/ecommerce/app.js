@@ -5,7 +5,7 @@ const productsRoutes = require("./routes/productsRoutes");
 const userRouter = require('./routes/UserRouter')
 const authJwt = require('./libs/jwt')
 
-app.use(authJwt())
+app.use(authJwt()) 
 
 app.use(express.json());
 const api_prefix = process.env.API_PREFIX;
