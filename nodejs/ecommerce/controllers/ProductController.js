@@ -93,4 +93,19 @@ const productsBySupplier = async (req, res)=> {
     }
 }
 
-module.exports = {findAll, findOne, save, update, drop, productsBySupplier};
+const productsFilter = async (req, res)=> {
+    const { size, color, min, max } = req.body;
+    
+    const filteredProducts = await product.aggregate([
+        {
+            $match: {
+                size,
+                color,
+                price: { $gte: min, $lte: max }
+            }
+        }
+    ])
+    res.send(filteredProducts)
+}
+
+module.exports = {findAll, findOne, save, update, drop, productsBySupplier, productsFilter};

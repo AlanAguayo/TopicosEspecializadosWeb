@@ -1,6 +1,6 @@
 const express = require("express");
 const conn =  require('../libs/Connection');
-const router = express.Router();
+const router = express.Router(); 
 
 conn.open();
 
