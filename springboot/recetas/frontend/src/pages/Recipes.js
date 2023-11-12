@@ -36,7 +36,7 @@ function Recipes() {
 
   useEffect(() => {
     getData();
-  }, [query]);  // Ejecutar getData cuando la consulta cambie
+  }, [query]);
 
   const onSubmit = async (e) => {
     e.preventDefault();

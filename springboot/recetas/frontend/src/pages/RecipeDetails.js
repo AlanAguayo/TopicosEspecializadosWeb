@@ -83,8 +83,6 @@ function RecipesDetail() {
 
             <div className="mb-2 text-center">Dificultad: <span className="font-light">{dificultad}</span></div>
             <div className="mb-2 text-center">Tiempo: <span className="font-light">{tiempo}</span></div>
-
-
             <div className="mt-2 mb-8">
               Demostracion.
               <iframe title="Video" width="560" height="315" src={embedUrl} frameborder="0" allowfullscreen></iframe>

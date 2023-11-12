@@ -22,7 +22,7 @@ public class RecipesService {
         return repo.findById(id);
     }
 
-    public boolean add(Recipes receta) {
+    public boolean add(Recipes receta) {    
         repo.save(receta);
         return true;
     }
